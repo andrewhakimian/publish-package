@@ -19,14 +19,14 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
-      working-directory: publish-package
+      working-directory: package.json
 
     - name: Build
       run: npm run build
-      working-directory: publish-package
+      working-directory: package.json
 
     - name: Publish
       run: npm publish
-      working-directory: publish-package
+      working-directory: package.json
       env:
         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
