@@ -19,18 +19,18 @@ jobs:
     
     - name: Display package.json content
       run: cat package.json
-      working-directory: /.github/actions/package.json
+      working-directory: /.github/actions/local-action/package.json
       
     - name: Install dependencies
       run: npm ci
-      working-directory: /.github/actions/package.json
+      working-directory: /.github/actions/local-action/package.json
       
     - name: Build
       run: npm run build
-      working-directory: /.github/actions/package.json
+      working-directory: /.github/actions/local-action/package.json
       
     - name: Publish
       run: npm publish
-      working-directory: /.github/actions/package.json
+      working-directory: /.github/actions/local-action/package.json
       env:
         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
